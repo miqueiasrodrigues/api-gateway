@@ -16,6 +16,12 @@ public class ApiGatewayConfig {
                 .route(p -> p.path("/autenticacao-servico/**")
                         .filters(f -> f.stripPrefix(1))
                         .uri("lb://autenticacao-servico"))
+                .route(p -> p.path("/camera-servico/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://camera-servico"))
+                .route(p -> p.path("/notificacao-servico/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://notificacao-servico"))
                 .build();
     }
 }
